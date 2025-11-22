@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FACEIT Match Insights
 
-## Getting Started
+Faceit Insights is a powerful analytics dashboard for Counter-Strike 2 matches played on the FACEIT platform. Built with Next.js and TypeScript, it transforms raw match data into actionable visual insights, helping players and teams understand their performance beyond the basic scoreboard.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Impact Matrix**: Go beyond K/D. Visualize player impact versus survival with colored quadrants to identify the true MVPs of the match.
+- **Entry Analysis**: Analyze opening duel attempts versus success rates to see who is creating space for the team.
+- **Team Comparison**: A "Tale of the Tape" side-by-side comparison of total Kills, Assists, Utility Damage, and other key metrics.
+- **Level vs Performance**: Analyze if higher FACEIT levels (Elo) actually translate to better in-game performance.
+- **Player Badges**: Fun and informative titles like "The Juggernaut", "The Immortal", or "The Tactician" assigned based on unique playstyles.
+- **Advanced Stats**: Deep dive into Utility usage, Flash assists, Clutch success rates, and Multikills.
+- **Search Functionality**: Easily analyze matches by pasting a FACEIT match room URL or Match ID.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/)
+- **Charts & Visualization**: [Chart.js](https://www.chartjs.org/), [React Chartjs 2](https://react-chartjs-2.js.org/)
+- **Data Source**: [FACEIT Data API v4](https://developers.faceit.com/docs/tools/data-api)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏁 Getting Started
 
-## Learn More
+Follow these instructions to get the project up and running on your local machine.
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v18 or later recommended)
+- npm, yarn, pnpm, or bun
+- A FACEIT Developer API Key (You can get one [here](https://developers.faceit.com/))
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1.  **Clone the repository:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    git clone https://github.com/yourusername/faceit-insights.git
+    cd faceit-insights
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+3.  **Configure Environment Variables:**
+
+    Create a `.env.local` file in the root directory and add your FACEIT API key:
+
+    ```env
+    FACEIT_API_KEY=your_faceit_api_key_here
+    ```
+
+4.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
+
+5.  **Open the application:**
+
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📖 Usage
+
+1.  **Find a Match**: Go to [FACEIT.com](https://www.faceit.com/) and copy the URL of a finished CS2 match room (e.g., `https://www.faceit.com/en/cs2/room/1-1234...`).
+2.  **Analyze**: Paste the URL or the Match ID into the search bar on the home page and click "Analyze".
+3.  **Explore**: View detailed analytics, charts, and player breakdowns on the match details page.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
