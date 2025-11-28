@@ -146,3 +146,135 @@ export interface TeamStats {
   "Team Headshots": string;
   "Overtime score": string;
 }
+
+// Player Profile Types
+export interface FaceitPlayer {
+  player_id: string;
+  nickname: string;
+  avatar: string;
+  country: string;
+  cover_image: string;
+  faceit_url: string;
+  games: Record<string, GameDetail>;
+  memberships: string[];
+  verified: boolean;
+  activated_at: string;
+}
+
+export interface GameDetail {
+  faceit_elo: number;
+  skill_level: number;
+  game_player_id: string;
+  game_player_name: string;
+  region: string;
+}
+
+export interface MatchHistoryResponse {
+  items: MatchHistoryItem[];
+  start: number;
+  end: number;
+}
+
+export interface MatchHistoryItem {
+  match_id: string;
+  competition_id: string;
+  competition_name: string;
+  competition_type: string;
+  finished_at: number;
+  game_id: string;
+  game_mode: string;
+  match_type: string;
+  max_players: number;
+  organizer_id: string;
+  playing_players: string[];
+  results: MatchHistoryResults;
+  started_at: number;
+  status: string;
+  teams: MatchHistoryTeams;
+  teams_size: number;
+}
+
+export interface MatchHistoryResults {
+  winner: string;
+  score: Record<string, number>;
+}
+
+export interface MatchHistoryTeams {
+  faction1: MatchHistoryFaction;
+  faction2: MatchHistoryFaction;
+}
+
+export interface MatchHistoryFaction {
+  faction_id: string;
+  nickname: string;
+  avatar: string;
+  type: string;
+  players: MatchHistoryPlayer[];
+}
+
+export interface MatchHistoryPlayer {
+  player_id: string;
+  nickname: string;
+  avatar: string;
+  skill_level: number;
+  game_player_id: string;
+  game_player_name: string;
+  faceit_url: string;
+}
+
+export interface PlayerLifetimeStats {
+  player_id: string;
+  game_id: string;
+  lifetime: LifetimeStats;
+  segments: StatsSegment[];
+}
+
+export interface LifetimeStats {
+  "K/D Ratio": string;
+  "Win Rate %": string;
+  Matches: string;
+  "Total Headshots %": string;
+  "Average K/D Ratio": string;
+  "Average Headshots %": string;
+  "Longest Win Streak": string;
+  "Current Win Streak": string;
+  Wins: string;
+  "Recent Results": string[];
+  [key: string]: string | string[];
+}
+
+export interface StatsSegment {
+  label: string;
+  img_small: string;
+  img_regular: string;
+  stats: SegmentStats;
+  mode: string;
+  type: string;
+}
+
+export interface SegmentStats {
+  Kills: string;
+  Deaths: string;
+  Assists: string;
+  "K/D Ratio": string;
+  "K/R Ratio": string;
+  "Headshots %": string;
+  Matches: string;
+  Wins: string;
+  "Win Rate %": string;
+  MVPs: string;
+  "Triple Kills": string;
+  "Quadro Kills": string;
+  "Penta Kills": string;
+  "Average K/D Ratio": string;
+  "Average K/R Ratio": string;
+  "Average Kills": string;
+  "Average Deaths": string;
+  "Average Assists": string;
+  "Average Headshots %": string;
+  "Average MVPs": string;
+  "Average Triple Kills": string;
+  "Average Quadro Kills": string;
+  "Average Penta Kills": string;
+  [key: string]: string;
+}

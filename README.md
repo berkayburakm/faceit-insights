@@ -1,4 +1,4 @@
-# FACEIT Match Insights
+# FACEIT Insights
 
 Faceit Insights is a powerful analytics dashboard for Counter-Strike 2 matches played on the FACEIT platform. Built with Next.js and TypeScript, it transforms raw match data into actionable visual insights, helping players and teams understand their performance beyond the basic scoreboard.
 

@@ -3,6 +3,7 @@
 import { Player, Faction, MapEntity, LocationEntity } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
 import { 
   Crosshair, 
   Shield, 
@@ -30,7 +31,8 @@ import {
   Heart,
   ArrowUpDown,
   ChevronUp,
-  ChevronDown
+  ChevronDown,
+  ExternalLink
 } from "lucide-react";
 import {
   Tooltip,
@@ -424,15 +426,19 @@ export function PlayerBadges({ players, totalRounds, teams, map, location }: Pla
               return (
                 <TableRow key={player.player_id} className="border-slate-800 hover:bg-slate-900/50">
                   <TableCell className="font-medium">
-                    <div className="flex items-center gap-2">
+                    <Link 
+                      href={`/player/${player.player_id}`}
+                      className="flex items-center gap-2 hover:opacity-80 transition-opacity group"
+                    >
                       <Avatar className="h-8 w-8 border border-slate-700">
                         <AvatarImage src={player.avatar} alt={player.nickname} />
                         <AvatarFallback className="bg-slate-800 text-faceit-orange text-xs font-bold">
                           {player.nickname.slice(0, 2).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
-                      <span className="text-slate-100">{player.nickname}</span>
-                    </div>
+                      <span className="text-slate-100 group-hover:text-faceit-orange transition-colors">{player.nickname}</span>
+                      <ExternalLink className="h-3 w-3 text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </Link>
                   </TableCell>
                   <TableCell className={`text-center font-semibold ${kd >= 1 ? 'text-green-400' : 'text-red-400'}`}>
                     {player.player_stats["K/D Ratio"]}
