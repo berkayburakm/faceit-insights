@@ -76,7 +76,7 @@ export async function getPlayer(playerId: string): Promise<FaceitPlayer> {
   }
 
   const data = await res.json();
-  console.log(`📦 Player data fetched for: ${playerId}`,data);
+
   return data;
 }
 
@@ -98,7 +98,7 @@ export async function getPlayerByNickname(nickname: string): Promise<FaceitPlaye
   }
 
   const data = await res.json();
-  console.log(`📦 Player data fetched for nickname: ${nickname}`);
+
   return data;
 }
 
@@ -125,7 +125,7 @@ export async function getPlayerHistory(
   }
 
   const data = await res.json();
-  console.log(`📦 Player history fetched for: ${playerId} (${data.items?.length || 0} matches)`);
+
   return data;
 }
 
@@ -147,6 +147,6 @@ export async function getPlayerStats(playerId: string, gameId: string = "cs2"): 
   }
 
   const data = await res.json();
-  console.log(`📦 Player stats fetched for: ${playerId}`);
+
   return data;
 }

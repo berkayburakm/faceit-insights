@@ -52,27 +52,23 @@ export default function PlayerPage() {
           fetch(`/api/player/${playerId}/stats`),
         ]);
 
-        console.log("[PlayerPage] API responses", {
-          player: playerRes.status,
-          history: historyRes.status,
-          stats: statsRes.status,
-        });
+
 
         if (!playerRes.ok) throw new Error("Failed to fetch player data");
         
         const playerData = await playerRes.json();
-        console.log("[PlayerPage] player data", playerData);
+
         setPlayer(playerData);
 
         if (historyRes.ok) {
           const historyData = await historyRes.json();
-          console.log("[PlayerPage] history data", historyData);
+
           setHistory(historyData);
         }
 
         if (statsRes.ok) {
           const statsData = await statsRes.json();
-          console.log("[PlayerPage] stats data", statsData);
+
           setStats(statsData);
         }
       } catch (err) {
@@ -441,7 +437,7 @@ export default function PlayerPage() {
                               <TableCell className="text-right">
                                 <div className="flex justify-end gap-2">
                                   <a
-                                    href={`https://www.faceit.com/en/csgo/match/${match.match_id}`}
+                                    href={`https://www.faceit.com/en/cs2/room/${match.match_id}`}
                                     target="_blank"
                                     rel="noreferrer"
                                     className="inline-flex items-center justify-center px-3 py-1.5 text-sm font-semibold rounded-full border border-slate-800 bg-slate-900/60 text-slate-200 hover:border-blue-400 hover:text-white transition"

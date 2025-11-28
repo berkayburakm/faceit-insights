@@ -33,7 +33,7 @@ export function Header() {
               variant="secondary"
               className="bg-slate-800 text-slate-400 border-slate-700 text-xs font-medium"
             >
-              0.2.0
+              0.2.1
             </Badge>
           </Link>
 
