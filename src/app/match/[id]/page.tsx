@@ -32,6 +32,11 @@ export async function generateMetadata({ params }: MatchPageProps): Promise<Meta
     return {
       title: `${teamA} vs ${teamB} - ${score} (${map})`,
       description: `Detailed match statistics for ${teamA} vs ${teamB} on ${map}. Player ratings, impact analysis, and more.`,
+      openGraph: {
+        title: `${teamA} vs ${teamB} - ${score}`,
+        description: `Detailed match statistics for ${teamA} vs ${teamB} on ${map}.`,
+        images: [details.teams.faction1.avatar || "", details.teams.faction2.avatar || ""].filter(Boolean),
+      },
     };
   } catch (error) {
     return {

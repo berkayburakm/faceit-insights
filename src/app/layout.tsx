@@ -15,11 +15,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://faceit-insights.vercel.app"),
   title: {
     template: "%s | FACEIT Insights",
-    default: "FACEIT Insights",
+    default: "FACEIT Insights - CS2 Match Analytics & Player Stats",
   },
-  description: "Visualize your CS2 match story. Analyze momentum, player impact, and earn badges.",
+  description: "Visualize your CS2 match story. Analyze momentum, player impact, and earn badges with detailed FACEIT match statistics.",
+  keywords: ["FACEIT", "CS2", "Counter-Strike 2", "Stats", "Analytics", "Match History", "Player Stats", "Esports"],
+  authors: [{ name: "FACEIT Insights" }],
+  openGraph: {
+    title: "FACEIT Insights - CS2 Match Analytics",
+    description: "Visualize your CS2 match story. Analyze momentum, player impact, and earn badges.",
+    url: "https://faceit-insights.vercel.app",
+    siteName: "FACEIT Insights",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FACEIT Insights - CS2 Match Analytics",
+    description: "Visualize your CS2 match story. Analyze momentum, player impact, and earn badges.",
+    creator: "@faceitinsights",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
