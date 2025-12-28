@@ -65,7 +65,7 @@ export async function getPlayer(playerId: string): Promise<FaceitPlayer> {
     headers: {
       Authorization: `Bearer ${FACEIT_API_KEY}`,
     },
-    next: { revalidate: 60 },
+    cache: 'no-store',
   });
 
   if (!res.ok) {
@@ -87,7 +87,7 @@ export async function getPlayerByNickname(nickname: string): Promise<FaceitPlaye
     headers: {
       Authorization: `Bearer ${FACEIT_API_KEY}`,
     },
-    next: { revalidate: 60 },
+    cache: 'no-store',
   });
 
   if (!res.ok) {
@@ -114,7 +114,7 @@ export async function getPlayerHistory(
     headers: {
       Authorization: `Bearer ${FACEIT_API_KEY}`,
     },
-    next: { revalidate: 60 },
+    cache: 'no-store',
   });
 
   if (!res.ok) {
@@ -136,7 +136,7 @@ export async function getPlayerStats(playerId: string, gameId: string = "cs2"): 
     headers: {
       Authorization: `Bearer ${FACEIT_API_KEY}`,
     },
-    next: { revalidate: 60 },
+    cache: 'no-store',
   });
 
   if (!res.ok) {
